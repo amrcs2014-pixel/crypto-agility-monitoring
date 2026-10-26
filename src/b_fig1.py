@@ -72,7 +72,7 @@ def draw(out=P):
                          fc='#c8102e', ec='none', zorder=6))
     ax.text(sx - 4.2, sw[1] + 1.8, 'capture', ha='right', va='center', fontsize=FB, color='#c8102e')
     ax.text(18, 60.0, '8 clients (Mininet)', ha='center', va='top', fontsize=FH, weight='bold', color=INK)
-    ax.text(18, 57.2, 'Go 1.27, OpenSSL 4.0.3\n50 Mbit/s, 20 ms delay\n9 profiles (3 malicious)',
+    ax.text(18, 57.2, 'Go 1.27, OpenSSL 4.0.3\n50 Mbit/s, 20 ms one-way\n9 profiles (3 malicious)',
             ha='center', va='top', fontsize=FB, color=INK, linespacing=1.25)
     ax.text(57, 60.0, 'Server (Go, quic-go)', ha='center', va='top', fontsize=FH, weight='bold', color=INK)
     ax.text(57, 57.2, '1 Gbit/s link; TCP and QUIC\nECH key always loaded\nECDSA or ML-DSA-65 leaf',
@@ -106,7 +106,7 @@ def draw(out=P):
     panel(2, 2, 76, 41, 3, 'Stage 3: Baseline-trained monitoring')
     for x, head, body in ((5, 'Training', 'pre-migration baseline\nonly (classical KX,\nECDSA, no ECH)\n\nthresholds at 1 % and\n'
                                           '5 % FPR on baseline\nbenign flows'),
-                          (43, 'Testing', 'all 24 configurations\n(3 folds × 5 seeds)\n\nLightGBM, random forest,\n'
+                          (43, 'Testing', 'all 24 configurations\n(main fold; 3 folds and\n5 seeds as checks)\n\nLightGBM, random forest,\n'
                                           'MLP, Isolation Forest,\nbyte CNN; JA3/JA4\ninventories')):
         rbox(x, 5, 32, 30, 'white', ST[3][2], lw=1.3, r=1.2, z=2)
         ax.text(x + 16, 31.8, head, ha='center', va='center', fontsize=FH, weight='bold', color=INK, zorder=3)

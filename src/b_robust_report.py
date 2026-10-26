@@ -232,7 +232,7 @@ def si_section(t, longtab):
             for k, kn in (('base', 'none (false alarms)'), ('KX', 'hybrid KX'), ('CERT', 'ML-DSA cert.'), ('ECH', 'ECH'), ('combo', 'combinations')):
                 vals = [sh[f'{test}|{tr}|{k}|{n}'] for n in NS]
                 rows.append(f"{tn} & {tr.upper()} & {kn} & " + ' & '.join(
-                    '--' if v is None else (f'{v[2]:.2f}' if k == 'base' else f'{v[1]:.2f}') for v in vals) + '\\\\')
+                    '--' if v is None else (f'{v[2]:.2f}' if k == 'base' else fl(v[1])) for v in vals) + '\\\\')
     o.append(longtab('lll' + 'r' * len(NS), 'Test & Transport & Migration & ' + ' & '.join(f'$n={n}$' for n in NS), rows,
                      'Shift alarms on unlabelled traffic: share of 300 random windows of $n$ test flows that raise an alarm against the '
                      'baseline\'s training flows (two-sample KS test per feature, Bonferroni $\\alpha=0.01$; or PSI $>0.25$). Migrated '

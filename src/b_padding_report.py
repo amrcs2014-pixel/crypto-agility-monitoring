@@ -105,7 +105,7 @@ def si_section(t, longtab):
         return ''
     S, folds = s
     rows = []
-    for reg, rn in (('matched', 'trained on the same behaviours'), ('evasion', 'trained on the published behaviours')):
+    for reg, rn in (('matched', 'matched'), ('evasion', 'evasion')):
         for w in (('orig', 'rand', 'mimic') if reg == 'matched' else ('rand', 'mimic')):
             for pipe, pn in (('none', 'none'), ('R1', 'R1')):
                 for m in MK:
@@ -116,11 +116,13 @@ def si_section(t, longtab):
                             xs = [v[met] for v in vs if v[met] is not None]
                             return rng(min(xs), max(xs)) if xs else '--'
                         cells.append(f"{r('recall')} / {r('fpr')} / {r('beacon')} / {r('brute')}")
-                    rows.append(f"{rn} & {w} & {pn} & {MN[m]} & {cells[0]} & {cells[1]}\\\\")
+                    wn = {'orig': 'original', 'rand': 'random', 'mimic': 'benign-sized'}[w]
+                    rows.append(f"{rn} & {wn} & {pn} & {MN[m]} & {cells[0]} & {cells[1]}\\\\")
     return ('\\section*{S11 Padded and benign-sized attacks}' + longtab(
         'llll' + 'rr', 'Training & Attacks & Pipeline & Model & Baseline cells & Migrated cells', rows,
         'Padded and benign-sized attacks: mean over cells of recall / FPR / beacon recall / guessing recall (thresholds at 1\\,\\% FPR), range over '
-        f'{len(folds)} folds. Attacks: orig = published behaviours; rand = beacon with random request padding (0--1,024 B) and '
-        'response size (64--16,384 B), credential guessing with a randomly padded form (0--4,096 B); mimic = beacon with the request '
+        f'{len(folds)} folds. Training: matched = on the same attack set; evasion = on the original behaviours. Attacks: original = '
+        'published behaviours; random = beacon with random request padding (0--1,024 B) and '
+        'response size (64--16,384 B), credential guessing with a randomly padded form (0--4,096 B); benign-sized = beacon with the request '
         'and response sizes of the benign short-connection profile, with the same padded guessing. Scans are unchanged. Benign '
         'flows are the published ones.'))
