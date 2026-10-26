@@ -107,7 +107,7 @@ Python packages on the lab side: `mininet` 3.0, `nfstream` 6.6.0, `dpkt` 1.9.8 (
   - The public-server captures are left out because they contain the capturing machine's address. Their measurements are in `data/b_realworld.csv`.
   - Private keys are never committed. `lab/test_tls.sh` creates a fresh test PKI and ECH key for every rebuild.
 - **Regenerated captures differ in detail.** A rebuilt testbed produces new keys and new timing, so its flows differ in detail from the committed ones. Expect the same effects, not identical numbers.
-- **Determinism.** From the committed flow tables, `b_report.py`, `b_mixed_report.py` and `b_stats.py` reproduce the manuscript's numbers exactly. Bootstrap intervals can differ in the last floating-point digits across machines.
+- **Determinism.** From the committed `results/`, `b_report.py`, `b_mixed_report.py` and `b_stats.py` reproduce every number in the manuscript exactly (bootstrap intervals can differ in the last floating-point digits). Retraining from the flow tables with `b_detect.py` and `b_mixed.py` reproduces the LightGBM, random-forest, MLP, Isolation Forest, fingerprint and uneven-migration results. The one exception is the byte-level CNN, whose GPU training is not bit-for-bit deterministic; in our rerun it moved by up to 1 percentage point in two QUIC cells. Main fold: about 2.5 min for `b_detect.py` and 45 s for `b_mixed.py` on a GTX 1060.
 - **Lab addresses.** Clients are 10.0.0.11–18 and the server is 10.0.0.1 (`www.example.test`, ECH public name `public.example.test`). The MAC addresses in the flow tables are Mininet's random ones.
 
 ## Licence
