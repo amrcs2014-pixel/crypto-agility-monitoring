@@ -12,7 +12,9 @@ byte-level CNN (first 6 payloads x 100 bytes); JA3/JA4 coverage.
 Repairs: R0 threshold recalibration; R1 post-handshake statistics (+ handshake-completed flag; ablation
 without it); R1b no first-packet features; R2 few-shot (1/5/10 %), R2b balanced, R2r few-shot + recalibrated
 threshold; R3 retraining on all labelled migrated flows. Control: own full-flow statistics.
-Usage: python b_detect.py [fold]   -> results/b_eval.json (fold 0) or results/b_eval_f<k>.json
+Usage: python b_detect.py [fold] [seed_rep]   -> results/b_eval.json (fold 0) or results/b_eval_f<k>.json;
+  seed_rep > 0 re-runs the fold with model seed 19 + fold + 100 * seed_rep -> results/b_eval_f<k>_s<r>.json
+  (seed variability, reviewer M6; no prediction file, fingerprints or shift statistics are written).
 """
 import json, glob, os, sys, warnings
 from pathlib import Path
@@ -36,7 +38,8 @@ FOLDS = [({0, 1, 2, 3}, {4, 5}, {6, 7, 8, 9}),
 FOLD = int(sys.argv[1]) if len(sys.argv) > 1 else 0
 TRAIN, CAL, TEST = FOLDS[FOLD]
 POOL = set(range(10)) - TEST
-SEED = 19 + FOLD
+SREP = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+SEED = 19 + FOLD + 100 * SREP
 BENIGN = ['web_page', 'api_poll', 'download', 'upload', 'video', 'many_short']
 ID_COLS = {'id', 'expiration_id', 'src_ip', 'src_mac', 'src_oui', 'src_port', 'dst_ip', 'dst_mac', 'dst_oui', 'dst_port',
            'protocol', 'ip_version', 'vlan_id', 'tunnel_id', 'bidirectional_first_seen_ms', 'bidirectional_last_seen_ms',
@@ -97,7 +100,7 @@ def per_cell(gd, score, thr1, thr5, tag=None):
     """thr1/thr5: dict cell -> threshold at 1 % / 5 % FPR. Metrics on test reps only."""
     out = {}
     te = gd[gd.rep.isin(TEST)]
-    if tag and FOLD == 0:
+    if tag and FOLD == 0 and SREP == 0:
         PRED.append(pd.DataFrame(dict(tag=tag, cell=te.cell.values, group=te.group.values, profile=te.profile.values,
                                       rep=te.rep.values, y=te.y.values,
                                       alert=(score[te.index].values > te.cell.map(thr1).values).astype(np.int8))))
@@ -298,11 +301,13 @@ def main():
     ev['retrain_all'] = supervised(df, fs['nfs'], 'retrain', lambda gd: gd[~gd.baseline & gd.rep.isin(POOL)])  # R3
     ev['iforest_nfs'] = anomaly(df, fs['nfs'], 'iforest|nfs')
     ev['bytecnn'] = byte_cnn(df, X8)
-    if FOLD == 0:
+    if FOLD == 0 and SREP == 0:
         ev['fingerprints'] = fingerprints(df)
         ev['shift'] = shift(df, fs['nfs'])
         pd.concat(PRED, ignore_index=True).to_csv(R / 'b_pred.csv.gz', index=False, compression='gzip')
     out = R / ('b_eval.json' if FOLD == 0 else f'b_eval_f{FOLD}.json')
+    if SREP:
+        out = R / f'b_eval_f{FOLD}_s{SREP}.json'
     json.dump(ev, open(out, 'w'), indent=1, default=float)
     print('saved', out.name)
 

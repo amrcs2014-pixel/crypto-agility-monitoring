@@ -46,8 +46,9 @@ Cell names follow `<stack>-<transport>-<kx>-<cert>-ech<on|off>`, e.g. `openssl-t
 | `src/b_detect.py` | Detectors and repairs on one fold → `results/b_eval.json` (fold 0) or `results/b_eval_f<k>.json`; fold 0 also writes `results/b_pred.csv.gz` |
 | `src/b_stats.py` | Paired run-level bootstrap and factor models on the per-flow predictions → `results/b_stats.json` |
 | `src/b_mixed.py`, `src/b_mixed_report.py` | Uneven migration (benign clients first, attackers first, staggered retraining) → `results/b_mixed*.json`, `results/b_mixed_summary.json` |
+| `src/b_robust.py`, `src/b_robust_report.py` | Robustness analyses → `results/b_robust.json`: precision at realistic base rates, the 5 % operating point, per-cell bootstrap intervals, five model seeds per fold, stability of the main effects, and label-free shift alarms (KS / PSI) |
 | `src/b_report.py` | Number macros, tables and figures → `outputs/`; also writes `results/b_handshake.csv` |
-| `results/` | All evaluation results used in the manuscript (three folds) |
+| `results/` | All evaluation results used in the manuscript (three folds; `b_eval_f<k>_s<r>.json` are the reruns with model seeds 1–4) |
 | `figures/` | PNG renderings of the figures |
 
 **Detectors.** All are trained on the pre-migration baseline (classical key exchange, ECDSA, ECH off), with thresholds set at 1 % and 5 % FPR on its benign calibration flows:
@@ -80,6 +81,8 @@ python src/b_detect.py 2         # fold 2      -> results/b_eval_f2.json
 python src/b_stats.py            # -> results/b_stats.json
 python src/b_mixed.py 0; python src/b_mixed.py 1; python src/b_mixed.py 2
 python src/b_mixed_report.py     # -> results/b_mixed_summary.json
+for s in 1 2 3 4; do for f in 0 1 2; do python src/b_detect.py $f $s; done; done   # seed reruns (about 30 min)
+python src/b_robust.py           # -> results/b_robust.json (needs the seed reruns; about 5 min)
 python src/b_report.py           # -> outputs/ (number macros, tables, figures)
 ```
 

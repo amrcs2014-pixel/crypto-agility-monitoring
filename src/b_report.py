@@ -85,7 +85,7 @@ def baseline_mean(ev, key, model, metric):
 
 def main():
     ev = json.load(open(R / 'b_eval.json'))
-    folds = [ev] + [json.load(open(p)) for p in sorted(R.glob('b_eval_f*.json'))]
+    folds = [ev] + [json.load(open(p)) for p in sorted(R.glob('b_eval_f[0-9].json'))]
     st = json.load(open(R / 'b_stats.json'))
     hs = ev['hs']
     out = [mac('NCells', len(ev['cells'])), mac('NFlows', f"{ev['n_flows']:,}"),
@@ -158,6 +158,8 @@ def main():
                 v = fp.get(f'{f}|{cell_of(g, c)}', {}).get('coverage')
                 out.append(mac(f'Fp{gk}{fk}{re.sub(r"[^A-Za-z]", "", cname(c)).capitalize()}', f2(v)))
     out += mixed_section()
+    from b_robust_report import macros as robust_macros
+    out += robust_macros()
     (P / 'numbers_B.tex').write_text(''.join(out), encoding='utf-8')
     tables(ev, H, rep, st)
     figs(ev, H, rep)
