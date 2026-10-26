@@ -1,0 +1,913 @@
+{
+"cell": "go-tcp-classical-ecdsa-echoff",
+"stack": "go",
+"transport": "tcp",
+"kx": "classical",
+"cert": "ecdsa",
+"ech": "off",
+"reps": 10,
+"dur": 20.0,
+"wall": 287.39671540260315,
+"runs": [
+{
+"client": "10.0.0.11",
+"profile": "web_page",
+"rep": 0,
+"seed": 0,
+"malicious": false,
+"t_start": 1791173615.1516566,
+"t_end": 1791173637.1336603,
+"out": "requests 60 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "api_poll",
+"rep": 0,
+"seed": 1000,
+"malicious": false,
+"t_start": 1791173615.1522744,
+"t_end": 1791173637.2191095,
+"out": "requests 12 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "download",
+"rep": 0,
+"seed": 2000,
+"malicious": false,
+"t_start": 1791173615.1527946,
+"t_end": 1791173637.2194207,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "upload",
+"rep": 0,
+"seed": 3000,
+"malicious": false,
+"t_start": 1791173615.1532395,
+"t_end": 1791173637.2196784,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "video",
+"rep": 0,
+"seed": 4000,
+"malicious": false,
+"t_start": 1791173615.1536741,
+"t_end": 1791173637.2199273,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "many_short",
+"rep": 0,
+"seed": 5000,
+"malicious": false,
+"t_start": 1791173615.1541133,
+"t_end": 1791173637.220209,
+"out": "requests 23 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon",
+"rep": 0,
+"seed": 6000,
+"malicious": true,
+"t_start": 1791173615.1546767,
+"t_end": 1791173637.2205598,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "brute",
+"rep": 0,
+"seed": 7000,
+"malicious": true,
+"t_start": 1791173615.1552114,
+"t_end": 1791173637.2208605,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "scan",
+"rep": 0,
+"seed": 8000,
+"malicious": true,
+"t_start": 1791173638.22227,
+"t_end": 1791173658.274375,
+"out": "requests 113 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "web_page",
+"rep": 1,
+"seed": 1,
+"malicious": false,
+"t_start": 1791173638.2243664,
+"t_end": 1791173660.818706,
+"out": "requests 61 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "api_poll",
+"rep": 1,
+"seed": 1001,
+"malicious": false,
+"t_start": 1791173638.2262313,
+"t_end": 1791173660.8190155,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "download",
+"rep": 1,
+"seed": 2001,
+"malicious": false,
+"t_start": 1791173638.2280142,
+"t_end": 1791173660.8192663,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "upload",
+"rep": 1,
+"seed": 3001,
+"malicious": false,
+"t_start": 1791173638.2300763,
+"t_end": 1791173660.819504,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "video",
+"rep": 1,
+"seed": 4001,
+"malicious": false,
+"t_start": 1791173638.2320511,
+"t_end": 1791173660.8197381,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "many_short",
+"rep": 1,
+"seed": 5001,
+"malicious": false,
+"t_start": 1791173638.2341847,
+"t_end": 1791173660.8199725,
+"out": "requests 24 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon",
+"rep": 1,
+"seed": 6001,
+"malicious": true,
+"t_start": 1791173638.236887,
+"t_end": 1791173660.8204815,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "brute",
+"rep": 1,
+"seed": 7001,
+"malicious": true,
+"t_start": 1791173661.8220613,
+"t_end": 1791173682.07879,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "scan",
+"rep": 1,
+"seed": 8001,
+"malicious": true,
+"t_start": 1791173661.8240871,
+"t_end": 1791173682.0788696,
+"out": "requests 110 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "web_page",
+"rep": 2,
+"seed": 2,
+"malicious": false,
+"t_start": 1791173661.826081,
+"t_end": 1791173682.0789285,
+"out": "requests 58 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "api_poll",
+"rep": 2,
+"seed": 1002,
+"malicious": false,
+"t_start": 1791173661.828165,
+"t_end": 1791173682.0789847,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "download",
+"rep": 2,
+"seed": 2002,
+"malicious": false,
+"t_start": 1791173661.8301504,
+"t_end": 1791173682.07904,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "upload",
+"rep": 2,
+"seed": 3002,
+"malicious": false,
+"t_start": 1791173661.8321128,
+"t_end": 1791173682.0790966,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "video",
+"rep": 2,
+"seed": 4002,
+"malicious": false,
+"t_start": 1791173661.834113,
+"t_end": 1791173682.331814,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "many_short",
+"rep": 2,
+"seed": 5002,
+"malicious": false,
+"t_start": 1791173661.8367362,
+"t_end": 1791173682.4055622,
+"out": "requests 24 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "beacon",
+"rep": 2,
+"seed": 6002,
+"malicious": true,
+"t_start": 1791173683.4059129,
+"t_end": 1791173703.607177,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "brute",
+"rep": 2,
+"seed": 7002,
+"malicious": true,
+"t_start": 1791173683.406531,
+"t_end": 1791173703.6072543,
+"out": "requests 77 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "scan",
+"rep": 2,
+"seed": 8002,
+"malicious": true,
+"t_start": 1791173683.4070263,
+"t_end": 1791173703.6073132,
+"out": "requests 112 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "web_page",
+"rep": 3,
+"seed": 3,
+"malicious": false,
+"t_start": 1791173683.4074748,
+"t_end": 1791173703.7960477,
+"out": "requests 51 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "api_poll",
+"rep": 3,
+"seed": 1003,
+"malicious": false,
+"t_start": 1791173683.4080691,
+"t_end": 1791173703.941476,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "download",
+"rep": 3,
+"seed": 2003,
+"malicious": false,
+"t_start": 1791173683.4087625,
+"t_end": 1791173703.9415593,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "upload",
+"rep": 3,
+"seed": 3003,
+"malicious": false,
+"t_start": 1791173683.4095416,
+"t_end": 1791173703.9416225,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "video",
+"rep": 3,
+"seed": 4003,
+"malicious": false,
+"t_start": 1791173683.410128,
+"t_end": 1791173703.941683,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "many_short",
+"rep": 3,
+"seed": 5003,
+"malicious": false,
+"t_start": 1791173704.9428263,
+"t_end": 1791173725.6021998,
+"out": "requests 22 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "beacon",
+"rep": 3,
+"seed": 6003,
+"malicious": true,
+"t_start": 1791173704.943353,
+"t_end": 1791173729.413722,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "brute",
+"rep": 3,
+"seed": 7003,
+"malicious": true,
+"t_start": 1791173704.9439156,
+"t_end": 1791173729.4138746,
+"out": "requests 72 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "scan",
+"rep": 3,
+"seed": 8003,
+"malicious": true,
+"t_start": 1791173704.9443028,
+"t_end": 1791173729.4139593,
+"out": "requests 112 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "web_page",
+"rep": 4,
+"seed": 4,
+"malicious": false,
+"t_start": 1791173704.944831,
+"t_end": 1791173729.4140458,
+"out": "requests 70 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "api_poll",
+"rep": 4,
+"seed": 1004,
+"malicious": false,
+"t_start": 1791173704.945438,
+"t_end": 1791173729.4141479,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "download",
+"rep": 4,
+"seed": 2004,
+"malicious": false,
+"t_start": 1791173704.9462764,
+"t_end": 1791173729.4142244,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "upload",
+"rep": 4,
+"seed": 3004,
+"malicious": false,
+"t_start": 1791173704.9469304,
+"t_end": 1791173729.4142916,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "video",
+"rep": 4,
+"seed": 4004,
+"malicious": false,
+"t_start": 1791173730.415465,
+"t_end": 1791173750.9008284,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "many_short",
+"rep": 4,
+"seed": 5004,
+"malicious": false,
+"t_start": 1791173730.416114,
+"t_end": 1791173751.3596098,
+"out": "requests 27 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon",
+"rep": 4,
+"seed": 6004,
+"malicious": true,
+"t_start": 1791173730.4165795,
+"t_end": 1791173754.599921,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "brute",
+"rep": 4,
+"seed": 7004,
+"malicious": true,
+"t_start": 1791173730.416987,
+"t_end": 1791173754.6000252,
+"out": "requests 70 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "scan",
+"rep": 4,
+"seed": 8004,
+"malicious": true,
+"t_start": 1791173730.4174638,
+"t_end": 1791173754.6001084,
+"out": "requests 112 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "web_page",
+"rep": 5,
+"seed": 5,
+"malicious": false,
+"t_start": 1791173730.4183218,
+"t_end": 1791173754.600186,
+"out": "requests 67 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "api_poll",
+"rep": 5,
+"seed": 1005,
+"malicious": false,
+"t_start": 1791173730.419083,
+"t_end": 1791173754.6002975,
+"out": "requests 12 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "download",
+"rep": 5,
+"seed": 2005,
+"malicious": false,
+"t_start": 1791173730.4199007,
+"t_end": 1791173754.60039,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "upload",
+"rep": 5,
+"seed": 3005,
+"malicious": false,
+"t_start": 1791173755.6015434,
+"t_end": 1791173756.42947,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "video",
+"rep": 5,
+"seed": 4005,
+"malicious": false,
+"t_start": 1791173755.6021614,
+"t_end": 1791173775.993287,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "many_short",
+"rep": 5,
+"seed": 5005,
+"malicious": false,
+"t_start": 1791173755.6026473,
+"t_end": 1791173775.993409,
+"out": "requests 25 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon",
+"rep": 5,
+"seed": 6005,
+"malicious": true,
+"t_start": 1791173755.6031334,
+"t_end": 1791173780.1289873,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "brute",
+"rep": 5,
+"seed": 7005,
+"malicious": true,
+"t_start": 1791173755.6036303,
+"t_end": 1791173780.1290798,
+"out": "requests 76 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "scan",
+"rep": 5,
+"seed": 8005,
+"malicious": true,
+"t_start": 1791173755.604351,
+"t_end": 1791173780.1291528,
+"out": "requests 108 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "web_page",
+"rep": 6,
+"seed": 6,
+"malicious": false,
+"t_start": 1791173755.60503,
+"t_end": 1791173780.1292377,
+"out": "requests 77 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "api_poll",
+"rep": 6,
+"seed": 1006,
+"malicious": false,
+"t_start": 1791173755.6058333,
+"t_end": 1791173780.12932,
+"out": "requests 11 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "download",
+"rep": 6,
+"seed": 2006,
+"malicious": false,
+"t_start": 1791173781.130428,
+"t_end": 1791173782.5309665,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "upload",
+"rep": 6,
+"seed": 3006,
+"malicious": false,
+"t_start": 1791173781.1310284,
+"t_end": 1791173782.5311503,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "video",
+"rep": 6,
+"seed": 4006,
+"malicious": false,
+"t_start": 1791173781.131522,
+"t_end": 1791173802.865406,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "many_short",
+"rep": 6,
+"seed": 5006,
+"malicious": false,
+"t_start": 1791173781.1320674,
+"t_end": 1791173802.865486,
+"out": "requests 26 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "beacon",
+"rep": 6,
+"seed": 6006,
+"malicious": true,
+"t_start": 1791173781.1328905,
+"t_end": 1791173803.256776,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "brute",
+"rep": 6,
+"seed": 7006,
+"malicious": true,
+"t_start": 1791173781.133981,
+"t_end": 1791173803.2568572,
+"out": "requests 74 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "scan",
+"rep": 6,
+"seed": 8006,
+"malicious": true,
+"t_start": 1791173781.134756,
+"t_end": 1791173803.2569184,
+"out": "requests 112 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "web_page",
+"rep": 7,
+"seed": 7,
+"malicious": false,
+"t_start": 1791173781.1355906,
+"t_end": 1791173803.426952,
+"out": "requests 68 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "api_poll",
+"rep": 7,
+"seed": 1007,
+"malicious": false,
+"t_start": 1791173804.4280982,
+"t_end": 1791173824.4981034,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "download",
+"rep": 7,
+"seed": 2007,
+"malicious": false,
+"t_start": 1791173804.428662,
+"t_end": 1791173824.4981987,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "upload",
+"rep": 7,
+"seed": 3007,
+"malicious": false,
+"t_start": 1791173804.4292116,
+"t_end": 1791173824.4982688,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "video",
+"rep": 7,
+"seed": 4007,
+"malicious": false,
+"t_start": 1791173804.4296873,
+"t_end": 1791173825.873333,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "many_short",
+"rep": 7,
+"seed": 5007,
+"malicious": false,
+"t_start": 1791173804.4304278,
+"t_end": 1791173825.873421,
+"out": "requests 20 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon",
+"rep": 7,
+"seed": 6007,
+"malicious": true,
+"t_start": 1791173804.4312725,
+"t_end": 1791173829.378624,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "brute",
+"rep": 7,
+"seed": 7007,
+"malicious": true,
+"t_start": 1791173804.431862,
+"t_end": 1791173829.3787053,
+"out": "requests 75 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "scan",
+"rep": 7,
+"seed": 8007,
+"malicious": true,
+"t_start": 1791173804.4325335,
+"t_end": 1791173829.3787658,
+"out": "requests 113 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "web_page",
+"rep": 8,
+"seed": 8,
+"malicious": false,
+"t_start": 1791173830.3799171,
+"t_end": 1791173853.9360447,
+"out": "requests 69 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "api_poll",
+"rep": 8,
+"seed": 1008,
+"malicious": false,
+"t_start": 1791173830.3805547,
+"t_end": 1791173853.9361486,
+"out": "requests 10 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "download",
+"rep": 8,
+"seed": 2008,
+"malicious": false,
+"t_start": 1791173830.3811598,
+"t_end": 1791173853.9362297,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "upload",
+"rep": 8,
+"seed": 3008,
+"malicious": false,
+"t_start": 1791173830.3818336,
+"t_end": 1791173853.9363172,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "video",
+"rep": 8,
+"seed": 4008,
+"malicious": false,
+"t_start": 1791173830.3825033,
+"t_end": 1791173853.936395,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "many_short",
+"rep": 8,
+"seed": 5008,
+"malicious": false,
+"t_start": 1791173830.3833637,
+"t_end": 1791173853.9364743,
+"out": "requests 21 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon",
+"rep": 8,
+"seed": 6008,
+"malicious": true,
+"t_start": 1791173830.3841712,
+"t_end": 1791173853.93655,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "brute",
+"rep": 8,
+"seed": 7008,
+"malicious": true,
+"t_start": 1791173830.3851156,
+"t_end": 1791173853.936625,
+"out": "requests 72 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "scan",
+"rep": 8,
+"seed": 8008,
+"malicious": true,
+"t_start": 1791173854.937873,
+"t_end": 1791173875.1252544,
+"out": "requests 114 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "web_page",
+"rep": 9,
+"seed": 9,
+"malicious": false,
+"t_start": 1791173854.9387789,
+"t_end": 1791173879.4376285,
+"out": "requests 63 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "api_poll",
+"rep": 9,
+"seed": 1009,
+"malicious": false,
+"t_start": 1791173854.9393156,
+"t_end": 1791173879.4377272,
+"out": "requests 12 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "download",
+"rep": 9,
+"seed": 2009,
+"malicious": false,
+"t_start": 1791173854.9398482,
+"t_end": 1791173879.4379106,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "upload",
+"rep": 9,
+"seed": 3009,
+"malicious": false,
+"t_start": 1791173854.9403834,
+"t_end": 1791173879.438025,
+"out": "requests 1 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "video",
+"rep": 9,
+"seed": 4009,
+"malicious": false,
+"t_start": 1791173854.9410586,
+"t_end": 1791173879.4380972,
+"out": "requests 9 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "many_short",
+"rep": 9,
+"seed": 5009,
+"malicious": false,
+"t_start": 1791173854.9415684,
+"t_end": 1791173879.4381797,
+"out": "requests 24 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon",
+"rep": 9,
+"seed": 6009,
+"malicious": true,
+"t_start": 1791173854.9421892,
+"t_end": 1791173879.4382517,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "brute",
+"rep": 9,
+"seed": 7009,
+"malicious": true,
+"t_start": 1791173880.4393542,
+"t_end": 1791173900.543294,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "scan",
+"rep": 9,
+"seed": 8009,
+"malicious": true,
+"t_start": 1791173880.4401002,
+"t_end": 1791173900.543464,
+"out": "requests 112 errors 0\n"
+}
+]
+}

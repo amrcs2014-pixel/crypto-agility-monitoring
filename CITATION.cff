@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or its data, please cite it as below."
+title: "Post-quantum TLS and ECH as a step shift for network security monitoring: testbed, flow data and evaluation code"
+type: software
+version: 1.0.0
+date-released: 2026-10-26
+license: MIT
+repository-code: "https://github.com/amrcs2014-pixel/crypto-agility-monitoring"
+authors:
+  - family-names: "Abdelhaliem"
+    given-names: "Amr H."
+    affiliation: "Department of Cyber Security, Irbid National University, Irbid, Jordan"
+    email: "a.hasan@inu.edu.jo"
+keywords:
+  - network security monitoring
+  - post-quantum cryptography
+  - ML-KEM
+  - ML-DSA
+  - Encrypted Client Hello
+  - TLS fingerprinting
+  - concept drift
+  - intrusion detection

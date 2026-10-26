@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+outputs/
+logs/
+*.pdf
+*.pcap
+*.pcapng
+caps/
+pki/
+*.key
+*.pem
+ech/
+lab/gotls/tlslab

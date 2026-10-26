@@ -1,0 +1,12 @@
+{
+  "title": "Post-quantum TLS and ECH as a step shift for network security monitoring: testbed, flow data and evaluation code",
+  "description": "Testbed, derived flow tables, per-flow predictions and evaluation code accompanying the manuscript 'Crypto-agility breaks the baseline: post-quantum TLS and Encrypted Client Hello as a step shift for network security monitoring' (the manuscript itself is not included). A factorial Mininet testbed (Go/TCP, OpenSSL/TCP and Go/QUIC; classical or hybrid X25519MLKEM768 key exchange; ECDSA or ML-DSA-65 certificates; ECH off or on; 24 cells) replays seeded benign and malicious TLS workloads. Flow detectors trained on pre-migration traffic (LightGBM, random forest, MLP, Isolation Forest, byte-level CNN, JA3/JA4) are tested after each migration, together with eight repairs and an uneven-migration experiment.",
+  "upload_type": "software",
+  "license": "mit",
+  "creators": [
+    {"name": "Abdelhaliem, Amr H.", "affiliation": "Irbid National University"}
+  ],
+  "keywords": ["network security monitoring", "post-quantum cryptography", "ML-KEM", "ML-DSA",
+               "Encrypted Client Hello", "TLS fingerprinting", "concept drift", "intrusion detection"],
+  "version": "1.0.0"
+}
