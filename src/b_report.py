@@ -160,6 +160,8 @@ def main():
     out += mixed_section()
     from b_robust_report import macros as robust_macros
     out += robust_macros()
+    from b_padding_report import macros as padding_macros
+    out += padding_macros()
     (P / 'numbers_B.tex').write_text(''.join(out), encoding='utf-8')
     tables(ev, H, rep, st)
     figs(ev, H, rep)

@@ -1,0 +1,313 @@
+{
+"cell": "go-tcp-classical-mldsa-echon",
+"stack": "go",
+"transport": "tcp",
+"kx": "classical",
+"cert": "mldsa",
+"ech": "on",
+"reps": 10,
+"dur": 20.0,
+"wall": 98.10519433021545,
+"runs": [
+{
+"client": "10.0.0.11",
+"profile": "beacon_rand",
+"rep": 0,
+"seed": 9000,
+"malicious": true,
+"t_start": 1793005550.3125312,
+"t_end": 1793005571.9008975,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "brute_rand",
+"rep": 0,
+"seed": 10000,
+"malicious": true,
+"t_start": 1793005550.3134925,
+"t_end": 1793005571.9009767,
+"out": "requests 74 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_mimic",
+"rep": 0,
+"seed": 11000,
+"malicious": true,
+"t_start": 1793005550.3142838,
+"t_end": 1793005574.5289915,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_rand",
+"rep": 1,
+"seed": 9001,
+"malicious": true,
+"t_start": 1793005550.3149376,
+"t_end": 1793005574.5290678,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "brute_rand",
+"rep": 1,
+"seed": 10001,
+"malicious": true,
+"t_start": 1793005550.3157244,
+"t_end": 1793005574.529127,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_mimic",
+"rep": 1,
+"seed": 11001,
+"malicious": true,
+"t_start": 1793005550.3164365,
+"t_end": 1793005575.288629,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon_rand",
+"rep": 2,
+"seed": 9002,
+"malicious": true,
+"t_start": 1793005550.3168802,
+"t_end": 1793005575.2887106,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "brute_rand",
+"rep": 2,
+"seed": 10002,
+"malicious": true,
+"t_start": 1793005550.317367,
+"t_end": 1793005575.2888405,
+"out": "requests 70 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "beacon_mimic",
+"rep": 2,
+"seed": 11002,
+"malicious": true,
+"t_start": 1793005576.2901053,
+"t_end": 1793005596.4963117,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "beacon_rand",
+"rep": 3,
+"seed": 9003,
+"malicious": true,
+"t_start": 1793005576.291008,
+"t_end": 1793005596.832115,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "brute_rand",
+"rep": 3,
+"seed": 10003,
+"malicious": true,
+"t_start": 1793005576.2917244,
+"t_end": 1793005596.8321943,
+"out": "requests 78 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_mimic",
+"rep": 3,
+"seed": 11003,
+"malicious": true,
+"t_start": 1793005576.2923996,
+"t_end": 1793005598.099893,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "beacon_rand",
+"rep": 4,
+"seed": 9004,
+"malicious": true,
+"t_start": 1793005576.2931569,
+"t_end": 1793005598.099972,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "brute_rand",
+"rep": 4,
+"seed": 10004,
+"malicious": true,
+"t_start": 1793005576.2939622,
+"t_end": 1793005598.1000307,
+"out": "requests 72 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon_mimic",
+"rep": 4,
+"seed": 11004,
+"malicious": true,
+"t_start": 1793005576.2948656,
+"t_end": 1793005598.1000888,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon_rand",
+"rep": 5,
+"seed": 9005,
+"malicious": true,
+"t_start": 1793005576.295774,
+"t_end": 1793005598.3211794,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "brute_rand",
+"rep": 5,
+"seed": 10005,
+"malicious": true,
+"t_start": 1793005599.3224342,
+"t_end": 1793005619.3541336,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "beacon_mimic",
+"rep": 5,
+"seed": 11005,
+"malicious": true,
+"t_start": 1793005599.3233016,
+"t_end": 1793005623.3881357,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_rand",
+"rep": 6,
+"seed": 9006,
+"malicious": true,
+"t_start": 1793005599.3240197,
+"t_end": 1793005623.38822,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "brute_rand",
+"rep": 6,
+"seed": 10006,
+"malicious": true,
+"t_start": 1793005599.324719,
+"t_end": 1793005623.3882842,
+"out": "requests 72 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "beacon_mimic",
+"rep": 6,
+"seed": 11006,
+"malicious": true,
+"t_start": 1793005599.3255124,
+"t_end": 1793005623.3883452,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_rand",
+"rep": 7,
+"seed": 9007,
+"malicious": true,
+"t_start": 1793005599.3264158,
+"t_end": 1793005623.3884056,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "brute_rand",
+"rep": 7,
+"seed": 10007,
+"malicious": true,
+"t_start": 1793005599.3271933,
+"t_end": 1793005623.3884654,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon_mimic",
+"rep": 7,
+"seed": 11007,
+"malicious": true,
+"t_start": 1793005599.3280258,
+"t_end": 1793005623.3885221,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "beacon_rand",
+"rep": 8,
+"seed": 9008,
+"malicious": true,
+"t_start": 1793005624.3897946,
+"t_end": 1793005645.7309225,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "brute_rand",
+"rep": 8,
+"seed": 10008,
+"malicious": true,
+"t_start": 1793005624.3906748,
+"t_end": 1793005645.731009,
+"out": "requests 75 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_mimic",
+"rep": 8,
+"seed": 11008,
+"malicious": true,
+"t_start": 1793005624.3913782,
+"t_end": 1793005646.4104693,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_rand",
+"rep": 9,
+"seed": 9009,
+"malicious": true,
+"t_start": 1793005624.3921187,
+"t_end": 1793005646.4105475,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "brute_rand",
+"rep": 9,
+"seed": 10009,
+"malicious": true,
+"t_start": 1793005624.39294,
+"t_end": 1793005646.4106064,
+"out": "requests 76 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_mimic",
+"rep": 9,
+"seed": 11009,
+"malicious": true,
+"t_start": 1793005624.39395,
+"t_end": 1793005646.410701,
+"out": "requests 4 errors 0\n"
+}
+]
+}

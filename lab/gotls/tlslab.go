@@ -297,6 +297,14 @@ func (c *cl) sleep(lo, hi float64) {
 	time.Sleep(time.Duration((lo + c.rng.Float64()*(hi-lo)) * float64(time.Second)))
 }
 
+func (c *cl) pad(n int) string { // n random lowercase letters
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = byte('a' + c.rng.Intn(26))
+	}
+	return string(b)
+}
+
 func (c *cl) size(median float64) int {
 	return int(median * (0.25 + 1.5*c.rng.Float64()))
 }
@@ -373,6 +381,28 @@ func client(args []string) {
 			f := url.Values{"user": {"admin"}, "password": {fmt.Sprintf("pw%06d", c.rng.Intn(1000000))}}
 			c.post(h, "/login", []byte(f.Encode()), "application/x-www-form-urlencoded")
 			c.sleep(0.05, 0.25)
+		}
+	case "beacon_rand": // reviewer M3a: beacon with random request padding and random response size (C2 controls both ends)
+		c.oneShot = true
+		h := c.httpClient(false)
+		for time.Now().Before(end) {
+			c.get(h, "/obj?n="+strconv.Itoa(64+c.rng.Intn(16321))+"&id="+strconv.Itoa(c.rng.Intn(1<<20))+"&pad="+c.pad(c.rng.Intn(1025)))
+			c.sleep(4, 6)
+		}
+	case "brute_rand": // reviewer M3a: credential guessing with a randomly padded form (the victim's reply is unchanged)
+		c.oneShot = true
+		h := c.httpClient(false)
+		for time.Now().Before(end) {
+			f := url.Values{"user": {"admin"}, "password": {fmt.Sprintf("pw%06d", c.rng.Intn(1000000))}, "pad": {c.pad(c.rng.Intn(4097))}}
+			c.post(h, "/login", []byte(f.Encode()), "application/x-www-form-urlencoded")
+			c.sleep(0.05, 0.25)
+		}
+	case "beacon_mimic": // reviewer M3a: beacon timing, request and response sizes of the benign many_short profile
+		c.oneShot = true
+		h := c.httpClient(false)
+		for time.Now().Before(end) {
+			c.get(h, "/obj?n="+strconv.Itoa(c.size(3000)))
+			c.sleep(4, 6)
 		}
 	case "scan": // TLS handshake sweep: complete or fail the handshake, then close
 		ports := []int{443, 8443, 9443, 10443, 4433, 443}

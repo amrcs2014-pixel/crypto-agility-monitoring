@@ -1,0 +1,313 @@
+{
+"cell": "openssl-tcp-hybrid-mldsa-echon",
+"stack": "openssl",
+"transport": "tcp",
+"kx": "hybrid",
+"cert": "mldsa",
+"ech": "on",
+"reps": 10,
+"dur": 20.0,
+"wall": 104.72971725463867,
+"runs": [
+{
+"client": "10.0.0.11",
+"profile": "beacon_rand",
+"rep": 0,
+"seed": 9000,
+"malicious": true,
+"t_start": 1793007735.3364782,
+"t_end": 1793007759.4319117,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "brute_rand",
+"rep": 0,
+"seed": 10000,
+"malicious": true,
+"t_start": 1793007735.3374276,
+"t_end": 1793007759.431989,
+"out": "requests 72 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_mimic",
+"rep": 0,
+"seed": 11000,
+"malicious": true,
+"t_start": 1793007735.3381932,
+"t_end": 1793007759.4320462,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_rand",
+"rep": 1,
+"seed": 9001,
+"malicious": true,
+"t_start": 1793007735.3389256,
+"t_end": 1793007760.1800032,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "brute_rand",
+"rep": 1,
+"seed": 10001,
+"malicious": true,
+"t_start": 1793007735.3397474,
+"t_end": 1793007760.1800845,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_mimic",
+"rep": 1,
+"seed": 11001,
+"malicious": true,
+"t_start": 1793007735.3404582,
+"t_end": 1793007760.180144,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon_rand",
+"rep": 2,
+"seed": 9002,
+"malicious": true,
+"t_start": 1793007735.3414056,
+"t_end": 1793007760.1802032,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "brute_rand",
+"rep": 2,
+"seed": 10002,
+"malicious": true,
+"t_start": 1793007735.3421159,
+"t_end": 1793007760.1802619,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "beacon_mimic",
+"rep": 2,
+"seed": 11002,
+"malicious": true,
+"t_start": 1793007761.1814044,
+"t_end": 1793007782.746057,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "beacon_rand",
+"rep": 3,
+"seed": 9003,
+"malicious": true,
+"t_start": 1793007761.1821148,
+"t_end": 1793007782.7461312,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "brute_rand",
+"rep": 3,
+"seed": 10003,
+"malicious": true,
+"t_start": 1793007761.1826794,
+"t_end": 1793007782.7461867,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_mimic",
+"rep": 3,
+"seed": 11003,
+"malicious": true,
+"t_start": 1793007761.1834016,
+"t_end": 1793007784.7402642,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "beacon_rand",
+"rep": 4,
+"seed": 9004,
+"malicious": true,
+"t_start": 1793007761.1839483,
+"t_end": 1793007786.208137,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "brute_rand",
+"rep": 4,
+"seed": 10004,
+"malicious": true,
+"t_start": 1793007761.184551,
+"t_end": 1793007786.208219,
+"out": "requests 73 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "beacon_mimic",
+"rep": 4,
+"seed": 11004,
+"malicious": true,
+"t_start": 1793007761.1851954,
+"t_end": 1793007786.2082791,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon_rand",
+"rep": 5,
+"seed": 9005,
+"malicious": true,
+"t_start": 1793007761.1857321,
+"t_end": 1793007786.2083359,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "brute_rand",
+"rep": 5,
+"seed": 10005,
+"malicious": true,
+"t_start": 1793007787.2096019,
+"t_end": 1793007807.383396,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "beacon_mimic",
+"rep": 5,
+"seed": 11005,
+"malicious": true,
+"t_start": 1793007787.2102206,
+"t_end": 1793007807.4508104,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_rand",
+"rep": 6,
+"seed": 9006,
+"malicious": true,
+"t_start": 1793007787.2107008,
+"t_end": 1793007808.0093033,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "brute_rand",
+"rep": 6,
+"seed": 10006,
+"malicious": true,
+"t_start": 1793007787.2111468,
+"t_end": 1793007808.009381,
+"out": "requests 69 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "beacon_mimic",
+"rep": 6,
+"seed": 11006,
+"malicious": true,
+"t_start": 1793007787.2116106,
+"t_end": 1793007811.571165,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_rand",
+"rep": 7,
+"seed": 9007,
+"malicious": true,
+"t_start": 1793007787.2120678,
+"t_end": 1793007812.8384674,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.17",
+"profile": "brute_rand",
+"rep": 7,
+"seed": 10007,
+"malicious": true,
+"t_start": 1793007787.2126637,
+"t_end": 1793007812.838549,
+"out": "requests 70 errors 0\n"
+},
+{
+"client": "10.0.0.18",
+"profile": "beacon_mimic",
+"rep": 7,
+"seed": 11007,
+"malicious": true,
+"t_start": 1793007787.2133198,
+"t_end": 1793007812.838611,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.11",
+"profile": "beacon_rand",
+"rep": 8,
+"seed": 9008,
+"malicious": true,
+"t_start": 1793007813.8398623,
+"t_end": 1793007835.369341,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.12",
+"profile": "brute_rand",
+"rep": 8,
+"seed": 10008,
+"malicious": true,
+"t_start": 1793007813.8408923,
+"t_end": 1793007835.369464,
+"out": "requests 69 errors 0\n"
+},
+{
+"client": "10.0.0.13",
+"profile": "beacon_mimic",
+"rep": 8,
+"seed": 11008,
+"malicious": true,
+"t_start": 1793007813.8416572,
+"t_end": 1793007838.0609763,
+"out": "requests 5 errors 0\n"
+},
+{
+"client": "10.0.0.14",
+"profile": "beacon_rand",
+"rep": 9,
+"seed": 9009,
+"malicious": true,
+"t_start": 1793007813.8423693,
+"t_end": 1793007838.06106,
+"out": "requests 4 errors 0\n"
+},
+{
+"client": "10.0.0.15",
+"profile": "brute_rand",
+"rep": 9,
+"seed": 10009,
+"malicious": true,
+"t_start": 1793007813.84303,
+"t_end": 1793007838.0611193,
+"out": "requests 71 errors 0\n"
+},
+{
+"client": "10.0.0.16",
+"profile": "beacon_mimic",
+"rep": 9,
+"seed": 11009,
+"malicious": true,
+"t_start": 1793007813.8434494,
+"t_end": 1793007838.0611749,
+"out": "requests 4 errors 0\n"
+}
+]
+}

@@ -42,11 +42,13 @@ Cell names follow `<stack>-<transport>-<kx>-<cert>-ech<on|off>`, e.g. `openssl-t
 | `data/b_flows/<cell>.csv.gz` | One row per flow (44,496 flows in 24 cells) with labels, NFStream and own features; the analysis keeps the 44,386 TCP and UDP flows and drops ICMP |
 | `data/b_flows/<cell>_bytes.npy` | First 6 payload packets × 100 bytes per flow (uint8), input of the byte-level CNN |
 | `data/b_runs/<cell>.json` | Run schedule of every cell: client, profile, repetition, seed, label, start and end times |
+| `data/b_flows_pad/<cell>.csv.gz`, `data/b_runs_pad/<cell>.json` | Padded and benign-sized attacks, recaptured in all 24 cells: `beacon_rand` (random request padding 0–1,024 B, response 64–16,384 B), `brute_rand` (form padded with 0–4,096 B), `beacon_mimic` (beacon with the sizes of the benign `many_short` profile) |
 | `data/b_realworld.csv` | Public-server handshake measurements |
 | `src/b_detect.py` | Detectors and repairs on one fold → `results/b_eval.json` (fold 0) or `results/b_eval_f<k>.json`; fold 0 also writes `results/b_pred.csv.gz` |
 | `src/b_stats.py` | Paired run-level bootstrap and factor models on the per-flow predictions → `results/b_stats.json` |
 | `src/b_mixed.py`, `src/b_mixed_report.py` | Uneven migration (benign clients first, attackers first, staggered retraining) → `results/b_mixed*.json`, `results/b_mixed_summary.json` |
 | `src/b_robust.py`, `src/b_robust_report.py` | Robustness analyses → `results/b_robust.json`: precision at realistic base rates, the 5 % operating point, per-cell bootstrap intervals, five model seeds per fold, stability of the main effects, and label-free shift alarms (KS / PSI) |
+| `src/b_padding.py`, `src/b_padding_report.py` | Is the post-handshake repair (R1) robust to padded or benign-sized attacks? Matched (trained on the padded attacks) and evasion (trained on the original attacks) regimes → `results/b_padding*.json` |
 | `src/b_report.py` | Number macros, tables and figures → `outputs/`; also writes `results/b_handshake.csv` |
 | `results/` | All evaluation results used in the manuscript (three folds; `b_eval_f<k>_s<r>.json` are the reruns with model seeds 1–4) |
 | `figures/` | PNG renderings of the figures |
@@ -83,6 +85,7 @@ python src/b_mixed.py 0; python src/b_mixed.py 1; python src/b_mixed.py 2
 python src/b_mixed_report.py     # -> results/b_mixed_summary.json
 for s in 1 2 3 4; do for f in 0 1 2; do python src/b_detect.py $f $s; done; done   # seed reruns (about 30 min)
 python src/b_robust.py           # -> results/b_robust.json (needs the seed reruns; about 5 min)
+python src/b_padding.py 0; python src/b_padding.py 1; python src/b_padding.py 2   # -> results/b_padding*.json
 python src/b_report.py           # -> outputs/ (number macros, tables, figures)
 ```
 
@@ -97,6 +100,8 @@ bash lab/test_tls.sh                                # test PKI + ECH key in $LAB
 mkdir -p $LAB/gotls && cp lab/gotls/* $LAB/gotls/ && (cd $LAB/gotls && $LAB/go/bin/go build -o tlslab .)
 bash lab/test_go.sh                                 # key conversion + handshake checks
 bash lab/run_grid.sh                                # 24 cells -> $LAB/caps (about 3.2 GB)
+LAB=$LAB CAP=$LAB/caps_pad REPS=10 DUR=20 ONLY=beacon_rand,brute_rand,beacon_mimic python3 lab/b_twin.py all   # padded attacks (about 45 min)
+CAP=$LAB/caps_pad OUT=data/b_flows_pad python3 lab/b_extract.py
 python3 lab/b_extract.py                            # -> data/b_flows/
 bash lab/b_realworld.sh && python3 lab/b_realworld_parse.py   # -> data/b_realworld.csv
 ```

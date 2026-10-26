@@ -23,8 +23,10 @@ TLSLAB = f'{B}/gotls/tlslab'
 OSSLC = f'{B}/b_osslclient.py'
 CAP = os.environ.get('CAP', f'{B}/caps')
 SRV, CLIENTS = '10.0.0.1', [f'10.0.0.{11 + i}' for i in range(8)]
-PROFILES = ['web_page', 'api_poll', 'download', 'upload', 'video', 'many_short', 'beacon', 'brute', 'scan']
-MALICIOUS = {'beacon', 'brute', 'scan'}
+PROFILES = ['web_page', 'api_poll', 'download', 'upload', 'video', 'many_short', 'beacon', 'brute', 'scan',
+            'beacon_rand', 'brute_rand', 'beacon_mimic']          # the last three: reviewer M3a (padding)
+MALICIOUS = {'beacon', 'brute', 'scan', 'beacon_rand', 'brute_rand', 'beacon_mimic'}
+ONLY = [p for p in os.environ.get('ONLY', ','.join(PROFILES[:9])).split(',') if p]   # profiles to run
 REPS = int(os.environ.get('REPS', 10))
 DUR = float(os.environ.get('DUR', 20))
 
@@ -82,7 +84,7 @@ def run_cell(cell):
         pcap = os.path.join(out, 'capture.pcap')
         srv.cmd(f"nohup tcpdump -i {srv.defaultIntf().name} -w '{pcap}' -U -s 0 'ip' >/dev/null 2>&1 & echo $! > /tmp/tcpd.pid")
         time.sleep(1.5)
-        jobs = [(p, r) for r in range(REPS) for p in PROFILES]
+        jobs = [(p, r) for r in range(REPS) for p in ONLY]
         runs, t0 = [], time.time()
         for k in range(0, len(jobs), len(cl)):
             batch, procs = jobs[k:k + len(cl)], []

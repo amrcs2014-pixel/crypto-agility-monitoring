@@ -152,6 +152,18 @@ def main():
         while time.time() < end:
             body = urllib.parse.urlencode({'user': 'admin', 'password': f'pw{rng.randrange(10**6):06d}'}).encode()
             one('POST', '/login', body, 'application/x-www-form-urlencoded'); sleep(0.05, 0.25)
+    elif prof == 'beacon_rand':  # reviewer M3a: random request padding and random response size
+        while time.time() < end:
+            pad = ''.join(rng.choice('abcdefghijklmnopqrstuvwxyz') for _ in range(rng.randrange(1025)))
+            one('GET', f'/obj?n={64 + rng.randrange(16321)}&id={rng.randrange(1 << 20)}&pad={pad}'); sleep(4, 6)
+    elif prof == 'brute_rand':  # reviewer M3a: randomly padded form; the victim's reply is unchanged
+        while time.time() < end:
+            pad = ''.join(rng.choice('abcdefghijklmnopqrstuvwxyz') for _ in range(rng.randrange(4097)))
+            body = urllib.parse.urlencode({'user': 'admin', 'password': f'pw{rng.randrange(10**6):06d}', 'pad': pad}).encode()
+            one('POST', '/login', body, 'application/x-www-form-urlencoded'); sleep(0.05, 0.25)
+    elif prof == 'beacon_mimic':  # reviewer M3a: beacon timing with the sizes of the benign many_short profile
+        while time.time() < end:
+            one('GET', f'/obj?n={size(3000)}'); sleep(4, 6)
     elif prof == 'scan':  # handshake sweep, close right after the handshake
         ports = [443, 8443, 9443, 10443, 4433, 443]
         while time.time() < end:
