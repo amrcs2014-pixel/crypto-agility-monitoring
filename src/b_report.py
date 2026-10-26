@@ -249,7 +249,7 @@ def mixed_section():
         'captured with the same seeded runs; for the no-repair and R1 rows they recombine per-cell results by construction. '
         'Staggered: retrained on the baseline plus the migrated benign flows of the training repetitions, threshold re-set on '
         'the calibration repetitions, then tested before and after the attackers migrate as well. Per cell and fold: '
-        'Supplementary Table S8 (Section S9); full-migration rows per cell: Supplementary Table S2.}\\label{tab:b_mixed}\n'
+        'Supplementary Table S8; full-migration rows per cell: Supplementary Table S2.}\\label{tab:b_mixed}\n'
         '\\footnotesize\\setlength{\\tabcolsep}{3pt}\\begin{tabular}{lrrrrrr}\\toprule & \\multicolumn{2}{c}{LightGBM} & '
         '\\multicolumn{2}{c}{Random forest} & \\multicolumn{2}{c}{MLP}\\\\\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\\cmidrule(lr){6-7}'
         ' Scenario and pipeline & Rec. & FPR & Rec. & FPR & Rec. & FPR\\\\\\midrule\n' + '\n'.join(rows[:-1]) +
