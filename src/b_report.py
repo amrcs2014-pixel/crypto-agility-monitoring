@@ -395,24 +395,9 @@ def figs(ev, H, rep):
 
 
 def method_fig():
-    fig, ax = plt.subplots(figsize=(7.2, 2.3)); ax.axis('off'); ax.set_xlim(0, 100); ax.set_ylim(0, 30)
-
-    def box(x, y, w, h, t, c):
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle='round,pad=0.3', fc=c, ec='#555555', lw=0.6))
-        ax.text(x + w / 2, y + h / 2, t, ha='center', va='center', fontsize=6.3)
-
-    def arr(x1, y1, x2, y2):
-        ax.annotate('', xy=(x2, y2), xytext=(x1, y1), arrowprops=dict(arrowstyle='->', lw=0.7, color='#333333'))
-    box(1, 16, 19, 12, '8 clients (Mininet)\nGo 1.27 / OpenSSL 4.0.3\n50 Mbit/s, 20 ms\n6 benign + 3 malicious\nprofiles, seeded', '#f0f0f0')
-    box(26, 16, 19, 12, 'Server (Go, quic-go)\nECDSA | ML-DSA-65 leaf\nECH key, TCP | QUIC\n1 Gbit/s link', '#f0f0f0')
-    box(51, 16, 20, 12, '24 cells:\nKX x CERT x ECH x\nstack/transport\ncapture at server', '#deebf7')
-    box(77, 16, 21, 12, 'Features: NFStream (77),\nJA3/JA4, ClientHello,\nfull vs post-handshake\nstats, first 6x100 bytes', '#deebf7')
-    box(1, 1, 30, 11, 'Train on baseline (classical,\nECDSA, no ECH); thresholds at\n1% / 5% FPR on baseline benign', '#e5f5e0')
-    box(37, 1, 28, 11, 'Test every cell (3 folds):\nLightGBM, RF, MLP, IForest,\nbyte CNN, JA3/JA4 coverage', '#e5f5e0')
-    box(71, 1, 27, 11, 'Shift accounting (PSI, KS)\nRepairs: R0 threshold, R1 post-\nhandshake, R2 few-shot, R3', '#fde0dd')
-    arr(20, 22, 26, 22); arr(45, 22, 51, 22); arr(71, 22, 77, 22); arr(80, 16, 18, 12); arr(87, 16, 55, 12)
-    arr(31, 6.5, 37, 6.5); arr(65, 6.5, 71, 6.5)
-    fig.savefig(P / 'b_fig_method.pdf', bbox_inches='tight'); plt.close(fig)
+    """Figure 1: four-stage study design (layout supplied by the authors), drawn in b_fig1.py."""
+    from b_fig1 import draw
+    draw(P)
 
 
 if __name__ == '__main__':
